@@ -109,6 +109,7 @@ nmap <F8> :TagbarToggle<CR>	" envocing Tagbar on <F8>
 " Next character:
 " f<char> (inclusive)
 " t<char> (exclusive)
+" F<char> and T<char> for previous char-s
 " -------------------------
 " qa record a macro in register a
 " q to finish recording
