@@ -14,6 +14,9 @@ alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vim='vimx'
 alias ls='ls -alh --color'
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
+
 #### Notes on useful bash commands (used to live in Google Keep)
 # ln -s somefile somelink	- creating a link to file (ln is for link)
 # tail somefile			- prints last 10 lines in file
