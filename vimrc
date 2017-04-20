@@ -24,6 +24,10 @@ filetype plugin indent on
 "===================================================================================================
 " plugin settings
 "---------------------------------------------------------------------------------------------------
+" settings for YouCompleteMe
+let g:ycm_extra_conf = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"---------------------------------------------------------------------------------------------------
 " settings for solarized
 set background=light
 colorscheme solarized
