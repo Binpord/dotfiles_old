@@ -176,3 +176,5 @@ nmap <F8> :TagbarToggle<CR>	" envocing Tagbar on <F8>
 " <C-]> - go to tag
 " <C-t> - go back
 " ====================================================
+" <C-o> - to undo jump (such as caused by gg or G)
+" ====================================================
