@@ -12,7 +12,7 @@ fi
 # vadim
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vim='vimx'
-alias ls='ls -alh --color'
+alias ls='ls -alh --color --group-directories-first'
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
