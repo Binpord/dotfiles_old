@@ -13,3 +13,16 @@
 	username = ShadowLim
 [credential]
 	helper = cache --timeout=3600
+
+# ============================================================
+#### Git notes (used to live in my Google Keep)
+# ============================================================
+# git push -u origin <branch> - push local branch to remote repo
+# ------------------------------------------------------------
+# Ignore some files:
+# .gitignore is what you need
+# The problem is that .gitignore ignores just files that weren't tracked before (by git add). 
+# Run git reset name_of_file to unstage the file and keep it. 
+# In case you want to also remove given file from the repository (after pushing), use git rm --cached name_of_file.
+# ------------------------------------------------------------
+# git reset filename                - undo a <git add filename> effect
