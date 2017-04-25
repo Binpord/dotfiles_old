@@ -28,22 +28,22 @@ alias ls='ls -alh --color --group-directories-first'
 # wc ...
 # sort ...
 # setsid ...		- run a program in a new session
-#====================================================
+# ====================================================
 # if bash (example in the tmux) hangs and do not respond to anything - probably hitted Ctrl-s => need to click Ctrl-q
-#====================================================
+# ====================================================
 # Ctrl-a - beginning of the line (first letter)
 # Ctrl-e - end of the line
 # Ctrl-r - reverse history search in bash (Ctrl-r again for less resent variant)
-#====================================================
+# ====================================================
 ##### journalctl		- command to view logs
-#----------------------------------------------------
+# ----------------------------------------------------
 # journalctl --since "2015-01-10 17:15:00" --until "1 hour ago"
 # journalctl --since today
-#----------------------------------------------------
+# ----------------------------------------------------
 # journalctl -u nginx.service	- view by unit (in the example - for service nginx
-#----------------------------------------------------
+# ----------------------------------------------------
 # journalctl -k			- only kernel messages
-#----------------------------------------------------
+# ----------------------------------------------------
 # journalctl -p err -b		- view log messages with "error" priority from current boot
 # Priority values:
 # 0: emerg
@@ -54,9 +54,14 @@ alias ls='ls -alh --color --group-directories-first'
 # 5: notice
 # 6: info
 # 7: debug
-#----------------------------------------------------
+# ----------------------------------------------------
 # journalctl -f			- follow: works as tail -f
-#----------------------------------------------------
+# ----------------------------------------------------
 # configuration file is in /etc/systemd/journald.conf
-#====================================================
+# ====================================================
 # ldconfig -p | grep libjpeg	- check the version, location, existence of the library (replace jpeg with the one you search for)
+# ====================================================
+# xdg-open (eog in gnome)	- standart image viewer
+# feh 				- another image viewer
+# ====================================================
+# dracut -v -f			- solves issue with "Failed to find module 'vboxdrv'" errors in journalctl after kernel changes
