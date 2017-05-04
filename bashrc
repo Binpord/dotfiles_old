@@ -65,3 +65,11 @@ alias ls='ls -alh --color --group-directories-first'
 # feh 				- another image viewer
 # ====================================================
 # dracut -v -f			- solves issue with "Failed to find module 'vboxdrv'" errors in journalctl after kernel changes
+# ====================================================
+# ar -t mylib.a			- list objects in the .a lib
+# ar -xv mylib.a myobj.o	- extract myobj.o from mylib.a
+# for more see man ar
+# ====================================================
+# /etc/dnf/dnf.conf		- dnf config (to exclude some packages, etc)
+# ====================================================
+# clang --help			- clang "manual" page

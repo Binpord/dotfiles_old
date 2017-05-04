@@ -26,3 +26,10 @@
 # In case you want to also remove given file from the repository (after pushing), use git rm --cached name_of_file.
 # ------------------------------------------------------------
 # git reset filename                - undo a <git add filename> effect
+# ------------------------------------------------------------
+# If you want to see what you haven't git added yet:
+#
+# git diff myfile.txt
+# or if you want to see already-added changes
+#
+# git diff --cached myfile.txt
