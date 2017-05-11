@@ -73,3 +73,6 @@ alias ls='ls -alh --color --group-directories-first'
 # /etc/dnf/dnf.conf		- dnf config (to exclude some packages, etc)
 # ====================================================
 # clang --help			- clang "manual" page
+# ====================================================
+# to search for the exact header file:
+# dnf whatprovides '*/gdicmn.h'		- don't know why, but without */ doesn't work

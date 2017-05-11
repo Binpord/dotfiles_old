@@ -103,12 +103,18 @@ set imsearch=0			" but you can swithch it by typing <C-6>
 
 " ==================================================================================================
 " Mapping
+" ==================================================================================================
 vnoremap <C-c> "+y		" Ctrl+c in visual mod sends selection to clipboard
 inoremap jj <ESC>		" no more annoying esc finding
 nmap <F8> :TagbarToggle<CR>	" envocing Tagbar on <F8>
+" ==================================================================================================
+
+" ==================================================================================================
+" Commands
+" ==================================================================================================
 " Saving files with root priveledges without opening vim as root.
 " Special thanks to planetp from Stack excange for it.
-cmap w!! w !sudo tee > /dev/null %
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " ==================================================================================================
 " Vim notes (used to be in Google Keep)
 " ==================================================================================================
