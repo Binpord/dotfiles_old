@@ -51,6 +51,21 @@ ZSH_THEME="blinks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# -----------------------------------------
+# plugin configuration
+# -----------------------------------------
+
+# tmux
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART_ONCE=true
+export ZSH_TMUX_AUTOCONNECT=true
+export ZSH_TMUX_AUTOQUIT=true
+
+# ----------------------------------------
+# end of plugin configuration
+# ----------------------------------------
+
 plugins=(git dnf systemd tmux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
@@ -89,6 +104,11 @@ export EDITOR='vim'
 # =========================================
 # vadim
 # =========================================
+
+
+# -----------------------------------------
+# other aliases and settings
+# -----------------------------------------
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias vim='vimx'
 alias ls='ls -alh --color --group-directories-first'
