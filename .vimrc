@@ -31,12 +31,13 @@ let g:ycm_add_preview_to_completeopt = 0	" delete stressfull preview window on t
 set completeopt-=preview			" 
 " --------------------------------------------------------------------------------------------------
 " settings for solarized
-set background=light
+set background=dark
 colorscheme solarized
 " --------------------------------------------------------------------------------------------------
 " settings for the airline
 set laststatus=2		" status bar to be shown all the time
 let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 " --------------------------------------------------------------------------------------------------
 " settings for syntastic
