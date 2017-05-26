@@ -98,6 +98,7 @@ set wcm=<TAB>
 set keymap=russian-jcukenwin	" enable russian 'layout' (keymap)
 set iminsert=0			" by default keymap is still english
 set imsearch=0			" but you can swithch it by typing <C-6>
+set pastetoggle=<F2>		" pastetoggle
 " --------------------------------------------------------------------------------------------------
 " ==================================================================================================
 
