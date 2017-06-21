@@ -110,7 +110,6 @@ export EDITOR='vim'
 # other aliases and settings
 # -----------------------------------------
 alias mc='. /usr/libexec/mc/mc-wrapper.sh'
-alias vim='vimx'
 alias ls='ls -alh --color --group-directories-first'
 
 # Use vim cli mode
@@ -192,3 +191,7 @@ export KEYTIMEOUT=1
 # ====================================================
 # Close tty:
 # systemctl stop getty@tty4.service
+# ====================================================
+# Reflector script (from reflector package)
+# Verbosely rate and sort the five most recently synchronized mirrors by download speed, and overwrite the file /etc/pacman.d/mirrorlist:
+# reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
