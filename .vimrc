@@ -28,6 +28,7 @@ filetype plugin indent on
 let g:ycm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt = 0	" delete stressfull preview window on top of file
+let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
 set completeopt-=preview			" 
 " --------------------------------------------------------------------------------------------------
 " settings for solarized
@@ -36,6 +37,7 @@ colorscheme solarized
 " --------------------------------------------------------------------------------------------------
 " settings for the airline
 set laststatus=2		" status bar to be shown all the time
+let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
