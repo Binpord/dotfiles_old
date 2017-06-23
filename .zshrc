@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-# vadim
 export EDITOR='vim'
 
 # Compilation flags
@@ -129,7 +128,7 @@ bindkey '^r' history-incremental-search-backward
 
 export KEYTIMEOUT=1
 
-#### Notes on useful bash commands (used to live in Google Keep)
+#### Notes on useful bash commands
 # ln -s somefile somelink	- creating a link to file (ln is for link)
 # tail somefile			- prints last 10 lines in file
 # tail -f somefile		- tracking changes in file in real time
@@ -147,7 +146,7 @@ export KEYTIMEOUT=1
 # Ctrl-e - end of the line
 # Ctrl-r - reverse history search in bash (Ctrl-r again for less resent variant)
 # ====================================================
-##### journalctl		- command to view logs
+##### journalctl
 # ----------------------------------------------------
 # journalctl --since "2015-01-10 17:15:00" --until "1 hour ago"
 # journalctl --since today
@@ -195,3 +194,10 @@ export KEYTIMEOUT=1
 # Reflector script (from reflector package)
 # Verbosely rate and sort the five most recently synchronized mirrors by download speed, and overwrite the file /etc/pacman.d/mirrorlist:
 # reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+# ====================================================
+# cower - AUR agent (auto downloading / checking for updates)
+# cower -s		- search
+# cower -d		- download
+# cower -vdu		- verbose, download, updates - update AUR packages
+# ====================================================
+# stat -c %h -- "$file"			- echos amount of hardlinks to file
