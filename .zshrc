@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/vadim/.oh-my-zsh
@@ -108,7 +108,6 @@ export EDITOR='vim'
 # -----------------------------------------
 # other aliases and settings
 # -----------------------------------------
-alias mc='. /usr/libexec/mc/mc-wrapper.sh'
 alias ls='ls -alh --color --group-directories-first'
 
 # Use vim cli mode
@@ -127,6 +126,8 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 export KEYTIMEOUT=1
+
+source /usr/lib/mc/mc.sh
 
 #### Notes on useful bash commands
 # ln -s somefile somelink	- creating a link to file (ln is for link)
@@ -193,7 +194,7 @@ export KEYTIMEOUT=1
 # ====================================================
 # Reflector script (from reflector package)
 # Verbosely rate and sort the five most recently synchronized mirrors by download speed, and overwrite the file /etc/pacman.d/mirrorlist:
-# reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 # ====================================================
 # cower - AUR agent (auto downloading / checking for updates)
 # cower -s		- search
