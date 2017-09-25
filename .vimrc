@@ -103,6 +103,7 @@ set iminsert=0			" by default keymap is still english
 set imsearch=0			" but you can swithch it by typing <C-6>
 set pastetoggle=<F2>		" pastetoggle
 " --------------------------------------------------------------------------------------------------
+autocmd BufRead,BufNewFile *.tex setl noai nocin nosi inde= syntax=tex
 " ==================================================================================================
 
 " ==================================================================================================
@@ -112,6 +113,11 @@ vnoremap <C-c> "+y		" Ctrl+c in visual mod sends selection to clipboard
 inoremap jj <ESC>		" no more annoying esc finding
 nmap <F8> :TagbarToggle<CR>	" envocing Tagbar on <F8>
 " ==================================================================================================
+
+" ==================================================================================================
+" Snippets
+" ==================================================================================================
+nnoremap \tex :-1read $HOME/.vim/snippets/std.tex<CR>16jA
 
 " ==================================================================================================
 " Commands
