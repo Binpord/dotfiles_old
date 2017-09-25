@@ -1,3 +1,4 @@
 .PHONY=links
 links:
-	ln Home/* $HOME/
+	ln -f Home/.[!.]* ~/
+	ln -f Misc/ycm_extra_conf.py ~/.vim/
