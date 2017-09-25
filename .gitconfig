@@ -12,7 +12,7 @@
 [credential "https://github.com"]
 	username = ShadowLim
 [credential]
-	helper = cache --timeout=3600
+	helper = netrc -f ~/.netrc.gpg -v
 
 # ============================================================
 #### Git notes (used to live in my Google Keep)
