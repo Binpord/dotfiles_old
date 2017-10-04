@@ -10,6 +10,7 @@ export KEYTIMEOUT=1
 # General settings
 #
 ZSH_THEME="blinks"
+setopt extended_glob
 
 #
 # plugin configuration
