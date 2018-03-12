@@ -26,6 +26,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'valloric/youcompleteme'
 " gdb in vim is awesome
 Plugin 'Conque-GDB'
+" cmake integration
+Plugin 'vhdirk/vim-cmake'
+" multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 
@@ -144,6 +148,9 @@ nnoremap gk k
 nnoremap gj j
 " no more annoying esc finding
 inoremap jj <ESC>		
+" sync syntax highlighting on <F-12>
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 "
 " Snippets
