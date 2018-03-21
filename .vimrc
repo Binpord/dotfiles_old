@@ -30,6 +30,18 @@ Plugin 'Conque-GDB'
 Plugin 'vhdirk/vim-cmake'
 " multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
+" NERD Commenter
+Plugin 'scrooloose/nerdcommenter'
+" snippets engine
+Plugin 'sirver/ultisnips'
+" snippets are separated from the engine
+Plugin 'honza/vim-snippets'
+" auto brackets closing
+Plugin 'raimondi/delimitmate'
+" auto end for different if's, do's, def's, etc
+Plugin 'tpope/vim-endwise'
+" javascript improved highlighting and indentation
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
@@ -75,6 +87,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+"
+" UltiSnips
+"
+let g:UltiSnipsExpandTrigger="<c-j>"
+
+"
+" delimitMate
+"
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
 
 "--------------------------------------------
 " Other settings
@@ -122,6 +145,12 @@ set pastetoggle=<F2>
 "
 autocmd BufRead,BufNewFile *.tex setl nosi nocin inde= syntax=tex
 
+" auto-reload vimrc on edit
+augroup myvimrchooks
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+augroup END
+
 "
 " Indentation
 "
@@ -164,4 +193,4 @@ nnoremap \texpic :-1read $HOME/.vim/snippets/includegraphics-figure.tex<CR>5jdd3
 
 " Saving files with root priveledges without opening vim as root.
 " Special thanks to planetp from Stack excange for it.
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
