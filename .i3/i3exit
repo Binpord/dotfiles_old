@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+lock() {
+    $(sleep 2 && xset dpms force off) &
+    i3lock -n -e -f -i $HOME/Pictures/Wallpapers/arch_linux1.png -t
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        systemctl suspend
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 [lock|logout|suspend|reboot|shutdown]"
+        exit 2
+esac
+
+exit 0
