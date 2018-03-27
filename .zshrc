@@ -22,7 +22,7 @@ export ZSH_TMUX_AUTOSTART_ONCE=false
 export ZSH_TMUX_AUTOCONNECT=false
 export ZSH_TMUX_AUTOQUIT=true
 
-plugins=(git dnf systemd tmux vi-mode)
+plugins=(git tmux systemd vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
