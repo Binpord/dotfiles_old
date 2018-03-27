@@ -1,3 +1,10 @@
+"============================================
+"           
+"           VIM run commands
+"           place to $HOME/.vimrc
+"
+"============================================
+
 "--------------------------------------------
 " vundle plugin manager part
 "
@@ -144,12 +151,6 @@ set pastetoggle=<F2>
 " Autocommands
 "
 autocmd BufRead,BufNewFile *.tex setl nosi nocin inde= syntax=tex
-
-" auto-reload vimrc on edit
-augroup myvimrchooks
-    au!
-    autocmd bufwritepost .vimrc source ~/.vimrc
-augroup END
 
 "
 " Indentation
