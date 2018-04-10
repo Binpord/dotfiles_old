@@ -19,12 +19,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 " listing a directory tree
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " cool status line
 Plugin 'bling/vim-airline'
 " themes for status line
 Plugin 'vim-airline/vim-airline-themes'
 " syntax check
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 " view and navigate tags in a split window
 Plugin 'majutsushi/tagbar'
 " solarized colorscheme
@@ -49,6 +50,8 @@ Plugin 'raimondi/delimitmate'
 Plugin 'tpope/vim-endwise'
 " javascript improved highlighting and indentation
 Plugin 'pangloss/vim-javascript'
+" asynchronous lint engine
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -105,6 +108,14 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 "
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
+let delimitMate_smart_quotes  = 1
+let delimitMate_smart_matchpairs = 1
+
+"
+" autostart NERDTree
+"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 "--------------------------------------------
 " Other settings
