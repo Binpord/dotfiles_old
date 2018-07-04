@@ -10,6 +10,6 @@
 	name = Shiyanov Vadim
 	email = vadimsh853@gmail.com
 [credential "https://github.com"]
-	username = ShadowLim
-[credential]
-	helper = netrc -f ~/.netrc.gpg -v
+	username = Binpord
+[core]
+    excludesfile = /Users/vadim/.gitignore
