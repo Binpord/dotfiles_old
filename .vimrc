@@ -25,11 +25,11 @@ Plugin 'bling/vim-airline'
 " themes for status line
 Plugin 'vim-airline/vim-airline-themes'
 " syntax check
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " view and navigate tags in a split window
 Plugin 'majutsushi/tagbar'
-" solarized colorscheme
-Plugin 'altercation/vim-colors-solarized'
+" dracula colorscheme
+Plugin 'dracula/vim'
 " youcompleteme intelligent completion
 Plugin 'valloric/youcompleteme'
 " gdb in vim is awesome
@@ -51,7 +51,9 @@ Plugin 'tpope/vim-endwise'
 " javascript improved highlighting and indentation
 Plugin 'pangloss/vim-javascript'
 " asynchronous lint engine
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
+" open files by name with Ctrl+p
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -66,15 +68,15 @@ let g:ycm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " delete stressfull preview window on top of file
 let g:ycm_add_preview_to_completeopt = 0
-" to prevent bugs
-let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
 set completeopt-=preview
 
 "
 " settings for solarized
 "
-set background=dark
-colorscheme solarized
+syntax on
+" to fix strange highlighting behaviour
+let g:dracula_italic = 0
+color dracula
 
 "
 " settings for the airline
@@ -83,8 +85,7 @@ colorscheme solarized
 " status bar to be shown all the time
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled = 1
 
 "
@@ -110,12 +111,30 @@ let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 let delimitMate_smart_quotes  = 1
 let delimitMate_smart_matchpairs = 1
+" dirty hack to remap <BS> from youcompleteme to delimitMate
+imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+
+function! YcmOnDeleteChar()
+  if pumvisible()
+    return "\<C-y>"
+  endif
+  return "" 
+endfunction
 
 "
 " autostart NERDTree
 "
+
+" auto open NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+"
+" CtrlP
+"
+
+" custom ignore
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 "--------------------------------------------
 " Other settings
@@ -126,7 +145,7 @@ set backspace=2
 " show line numbers
 set number
 " syntax highlight (off by default)
-syntax on
+syntax enable
 " increment search
 set incsearch
 " highlight all search pattern matches
@@ -141,6 +160,8 @@ set hidden
 set ch=1
 " hide mouse when typing
 set mousehide
+" enable mouse use
+set mouse=a
 " more colors
 set t_Co=256
 " autoread file on change
@@ -151,7 +172,7 @@ set smartcase
 set wildmenu
 set wcm=<TAB>
 " enable russian 'layout' (keymap)
-set keymap=russian-jcukenwin
+set keymap=russian-jcukenmac
 " by default keymap is still english switching with <C-6>
 set iminsert=0
 set imsearch=0
@@ -192,6 +213,11 @@ inoremap jj <ESC>
 " sync syntax highlighting on <F-12>
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
+" macOS bind Alt+hjkl
+inoremap ∆ <ESC><Down>
+inoremap ˚ <ESC><UP>
+inoremap ˙ <ESC><LEFT>
+inoremap ¬ <ESC><RIGHT>
 
 "
 " Snippets
