@@ -1,0 +1,4 @@
+# use gnu coreutils ls
+alias ls='gls -alh --color --group-directories-first'
+
+alias vim='mvim -v'

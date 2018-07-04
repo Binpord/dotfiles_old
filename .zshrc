@@ -2,27 +2,20 @@
 # Variable set
 #
 export PATH=$HOME/bin:$PATH
-export ZSH=/home/vadim/.oh-my-zsh
+export ZSH=/Users/vadim/.oh-my-zsh
 export EDITOR='vim'
 export KEYTIMEOUT=1
 
 #
 # General settings
 #
-ZSH_THEME="blinks"
+ZSH_THEME="robbyrussell"
 setopt extended_glob
 
 #
 # plugin configuration
 #
-
-# tmux
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=false
-export ZSH_TMUX_AUTOCONNECT=false
-export ZSH_TMUX_AUTOQUIT=true
-
-plugins=(git tmux systemd vi-mode)
+plugins=(git zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,3 +27,18 @@ for file in $HOME/.zshrc.d/*; do
 		source $file
 	fi
 done
+
+#
+# system-specific options
+# stored in .zshrc-Darwin.d for MacOS
+#
+if [[ -d $HOME/.zshrc-$(uname).d ]]; then
+    for file in $HOME/.zshrc-$(uname).d/*; do
+        if [[ -r $file ]]; then
+            source $file
+        fi
+    done
+fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
