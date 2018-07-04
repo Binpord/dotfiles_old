@@ -6,5 +6,5 @@ $HOME:
 .vimrc
 .zshrc
 .zshrc.d
-.zshrc-$(uname).d
+.zshrc-Darwin.d
 .vim
