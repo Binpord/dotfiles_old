@@ -22,18 +22,23 @@ def linkDirectoryToDirectory(srcDirectory, dstDirectory, verbose):
     if verbose:
         print('Linking directory \'{}\' to directory \'{}\''.format(srcDirectory, dstDirectory))
 
+    cwd = os.getcwd()
+    os.chdir(srcDirectory)
+
     newDirectoryPath = os.path.join(dstDirectory, srcDirectory)
     newDirectoryPath = os.path.expandvars(newDirectoryPath)
     if not os.path.isdir(newDirectoryPath):
         if verbose:
             print('Creating directory \'{}\'.'.format(newDirectoryPath))
         os.system('mkdir {}'.format(newDirectoryPath))
-    for filename in os.listdir(srcDirectory):
-        filepath = os.path.join(srcDirectory, filename)
-        if os.path.isfile(filepath):
+
+    for filename in os.listdir('./'):                               # we already changed directory to srcDirectory
+        if os.path.isfile(filename):
             linkFileToDirectory(filename, newDirectoryPath, verbose)
-        elif os.path.isdir(filepath):
+        elif os.path.isdir(filename):
             linkDirectoryToDirectory(filename, newDirectoryPath, verbose)
+
+    os.chdir(cwd)
 
 def main():
     parser = argparse.ArgumentParser(description='Link config files in repo to their domains.')
