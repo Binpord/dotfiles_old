@@ -1,0 +1,10 @@
+$HOME:
+.bashrc
+.gitconfig
+.gitignore
+.tmux.conf
+.vimrc
+.zshrc
+.zshrc.d
+.zshrc-$(uname).d
+.vim
