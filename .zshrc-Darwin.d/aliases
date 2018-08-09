@@ -2,3 +2,4 @@
 alias ls='gls -alh --color --group-directories-first'
 
 alias vim='mvim -v'
+alias pip='pip3'
