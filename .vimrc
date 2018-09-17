@@ -26,14 +26,12 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " syntax check
 Plugin 'scrooloose/syntastic'
-" view and navigate tags in a split window
-Plugin 'majutsushi/tagbar'
-" dracula colorscheme
-Plugin 'dracula/vim'
+" gruvbox colorscheme
+Plugin 'morhetz/gruvbox'
 " youcompleteme intelligent completion
 Plugin 'valloric/youcompleteme'
 " gdb in vim is awesome
-Plugin 'Conque-GDB'
+"Plugin 'Conque-GDB'
 " cmake integration
 Plugin 'vhdirk/vim-cmake'
 " multiple cursors
@@ -50,8 +48,6 @@ Plugin 'raimondi/delimitmate'
 Plugin 'tpope/vim-endwise'
 " javascript improved highlighting and indentation
 Plugin 'pangloss/vim-javascript'
-" asynchronous lint engine
-"Plugin 'w0rp/ale'
 " open files by name with Ctrl+p
 Plugin 'kien/ctrlp.vim'
 
@@ -71,12 +67,14 @@ let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
 "
-" settings for solarized
+" settings for gruvbox
 "
 syntax on
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set background=dark
 " to fix strange highlighting behaviour
-let g:dracula_italic = 0
-color dracula
+"let g:dracula_italic = 0
+colorscheme gruvbox
 
 "
 " settings for the airline
@@ -85,7 +83,7 @@ color dracula
 " status bar to be shown all the time
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 
 "
@@ -144,8 +142,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 set backspace=2
 " show line numbers
 set number
-" syntax highlight (off by default)
-syntax enable
 " increment search
 set incsearch
 " highlight all search pattern matches
@@ -163,7 +159,7 @@ set mousehide
 " enable mouse use
 set mouse=a
 " more colors
-set t_Co=256
+"set t_Co=256
 " autoread file on change
 set autoread
 " search with case if search has letters in upper case
@@ -171,7 +167,7 @@ set smartcase
 " setting wild menu (every candidate is shown)
 set wildmenu
 set wcm=<TAB>
-" enable russian 'layout' (keymap)
+" enable russian keymap
 set keymap=russian-jcukenmac
 " by default keymap is still english switching with <C-6>
 set iminsert=0
@@ -182,7 +178,7 @@ set pastetoggle=<F2>
 "
 " Autocommands
 "
-autocmd BufRead,BufNewFile *.tex setl nosi nocin inde= syntax=tex
+"autocmd BufRead,BufNewFile *.tex setl nosi nocin inde= syntax=tex
 
 "
 " Indentation
