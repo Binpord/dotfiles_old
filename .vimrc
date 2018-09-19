@@ -50,6 +50,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'pangloss/vim-javascript'
 " open files by name with Ctrl+p
 Plugin 'kien/ctrlp.vim'
+" search for text occurences with :Ack
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 
@@ -126,6 +128,8 @@ endfunction
 " auto open NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" quit from vim, if NERDTree is only left tab
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "
 " CtrlP
@@ -133,6 +137,15 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " custom ignore
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+"
+" Ack
+"
+
+" Use the silver searcher if it is installed
+if executable('ag')
+	let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 "--------------------------------------------
 " Other settings
@@ -214,6 +227,8 @@ inoremap ∆ <ESC><Down>
 inoremap ˚ <ESC><UP>
 inoremap ˙ <ESC><LEFT>
 inoremap ¬ <ESC><RIGHT>
+" ycm go to shortcut
+nnoremap gt :YcmCompleter GoTo<CR>
 
 "
 " Snippets
