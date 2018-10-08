@@ -1,7 +1,7 @@
 #
 # Variable set
 #
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$HOME/bin:$PATH
 export ZSH=/Users/vadim/.oh-my-zsh
 export EDITOR='vim'
 export KEYTIMEOUT=1
