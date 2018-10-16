@@ -8,3 +8,4 @@ $HOME:
 .zshrc.d
 .zshrc-Darwin.d
 .vim
+.ssh
