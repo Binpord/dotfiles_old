@@ -11,6 +11,7 @@ function! SourceDirectory(dir)
     endfor
 endfunction
 
+call SourceDirectory('$HOME/.vim/autoload')
 call SourceDirectory('$HOME/.vim/plugin')
 " general settings
 call SourceDirectory('$HOME/.vim/settings')

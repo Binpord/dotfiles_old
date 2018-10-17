@@ -90,3 +90,6 @@ alias ls='ls -alh --color --group-directories-first'
 # ====================================================
 # to search for the exact header file:
 # dnf whatprovides '*/gdicmn.h'		- don't know why, but without */ doesn't work
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
