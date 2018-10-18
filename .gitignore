@@ -5,3 +5,6 @@ package.json
 *.ipynb_checkpoints
 *.dSYM
 a.out
+CMake*
+!CMakeLists.txt
+lib*
