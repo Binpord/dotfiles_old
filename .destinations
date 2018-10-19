@@ -5,8 +5,7 @@ $HOME:
 .tmux.conf
 .vimrc
 .zshrc
-.zshrc.d
-.zshrc-Darwin.d
+.zsh
 .vim
 .ssh
 Library
