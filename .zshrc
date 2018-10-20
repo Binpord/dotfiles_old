@@ -12,8 +12,8 @@ SourceDirectory() {
     done
 }
 
-SourceDirectory $HOME/.zsh/settings
+SourceDirectory $HOME/.zsh/plugins
+SourceDirectory $HOME/.zsh/general
 SourceDirectory $HOME/.zsh/$(uname)
-SourceDirectory $HOME/.zsh/plugin
 SourceDirectory $HOME/.zsh/custom
 
