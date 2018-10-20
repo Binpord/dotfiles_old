@@ -8,3 +8,5 @@ a.out
 CMake*
 !CMakeLists.txt
 lib*
+*.aux
+*.log
