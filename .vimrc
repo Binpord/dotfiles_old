@@ -12,9 +12,9 @@ function! SourceDirectory(dir)
 endfunction
 
 call SourceDirectory('$HOME/.vim/autoload')
-call SourceDirectory('$HOME/.vim/plugin')
+call SourceDirectory('$HOME/.vim/plugins')
 " general settings
-call SourceDirectory('$HOME/.vim/settings')
+call SourceDirectory('$HOME/.vim/general')
 " build functions
 call SourceDirectory('$HOME/.vim/build')
 " system-specific settings
