@@ -10,3 +10,4 @@ CMake*
 lib*
 *.aux
 *.log
+*.bib.*
