@@ -5,6 +5,8 @@ function! Build()
         call BuildClang()
     elseif &filetype == 'tex'
         call BuildPdflatex()
+    elseif &filetype == 'python'
+        call BuildPython()
     endif
     cd -
 endfunction

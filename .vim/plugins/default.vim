@@ -4,8 +4,6 @@
 set nocompatible
 call plug#begin('~/.vim/vim-plug')
 
-" let vundle manage vundle, required
-Plug 'VundleVim/Vundle.vim'
 " git support
 Plug 'tpope/vim-fugitive'
 " listing a directory tree
