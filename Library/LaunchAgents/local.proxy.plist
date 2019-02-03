@@ -4,8 +4,12 @@
     <dict>
         <key>Label</key>
         <string>local.proxy</string>
-        <key>Program</key>
-        <string>/Users/vadim/bin/proxy.sh</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>sh</string>
+          <string>-c</string>
+          <string>"$HOME/bin/proxy.sh"</string>
+        </array>
         <key>KeepAlive</key>
         <dict>
             <key>SuccessfulExit</key>
