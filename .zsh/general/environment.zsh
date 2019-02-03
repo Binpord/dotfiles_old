@@ -4,4 +4,5 @@ export PATH=/usr/local/sbin:$HOME/miniconda3/bin:$HOME/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='vim'
 export KEYTIMEOUT=1
+export XDG_CONFIG_HOME=$HOME/.config
 
