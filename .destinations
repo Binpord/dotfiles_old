@@ -2,6 +2,7 @@ $HOME:
 .bashrc
 .gitconfig
 .gitignore
+.jupyter
 .tmux.conf
 .vimrc
 .zshrc
