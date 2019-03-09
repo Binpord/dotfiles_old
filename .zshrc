@@ -17,3 +17,5 @@ SourceDirectory $HOME/.zsh/general
 SourceDirectory $HOME/.zsh/$(uname)
 SourceDirectory $HOME/.zsh/custom
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

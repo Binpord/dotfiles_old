@@ -1,5 +1,5 @@
-"--------------------------------------------
-" vundle plugin manager part
+"
+" vim-plugin manager part
 "
 set nocompatible
 call plug#begin('~/.vim/vim-plug')
@@ -38,8 +38,7 @@ Plug 'pangloss/vim-javascript'
 " search for text occurences with :Ack
 Plug 'mileszs/ack.vim'
 " fzf integration
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 
