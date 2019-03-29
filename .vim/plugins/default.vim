@@ -16,7 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 " syntax check
 Plug 'scrooloose/syntastic'
 " dracula colorscheme `as` will install the plugin in a directory called 'dracula' instead of just 'vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 " youcompleteme intelligent completion
 Plug 'valloric/youcompleteme'
 " cmake integration
