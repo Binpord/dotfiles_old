@@ -82,6 +82,9 @@ if (has("termguicolors"))
 endif
 colorscheme gruvbox
 
+" NERDTree
+let NERDTreeShowHidden=1
+
 " airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
