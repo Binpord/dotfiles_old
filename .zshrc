@@ -30,4 +30,5 @@ alias vim="nvim"
 alias ..="cd .."
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.conda-init.zsh ] && source ~/.conda-init.zsh
 
