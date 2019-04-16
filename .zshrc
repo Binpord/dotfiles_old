@@ -17,9 +17,14 @@ export plugins=(zsh-autosuggestions vi-mode)
 source $ZSH/oh-my-zsh.sh
 setopt extended_glob
 
-alias ls='ls -alh --color --group-directories-first'
-alias l='ls'
+if [[ '$(uname)' == 'Darwin' ]]; then
+    alias ls='gls -alh --color --groupd-directories-first'
+    alias ctags='$(brew --prefix)/bin/ctags'
+elif [[ '$(uname)' == 'Linux' ]]; then
+    alias ls='ls -alh --color --group-directories-first'
+fi
 
+alias l='ls'
 alias vim='nvim'
 
 alias ..='cd ..'
