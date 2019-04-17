@@ -26,8 +26,12 @@ fi
 
 alias l="ls"
 alias vim="nvim"
-
 alias ..="cd .."
+alias gst='git status'
+alias gci='git commit'
+alias gco='git checkout'
+alias gpush='git push'
+alias gpull='git pull'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.conda-init.zsh ] && source ~/.conda-init.zsh
