@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""
+" n<Plug>delimitMateBSbin<Plug>delimitMateBS<Plug>delimitMateBS<Plug>delimitMateBSbinpre<Plug>delimitMateBSo""""""""""""""""""""""""""""
 " Vadim Shiyanov Vimrc config
 """""""""""""""""""""""""""""
 set nocompatible
@@ -159,7 +159,7 @@ function! YcmOnDeleteChar()
     return ""
 endfunction
 
-inoremap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 
 " incsearch
 noremap /  <Plug>(incsearch-forward)
