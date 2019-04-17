@@ -11,8 +11,9 @@ export EDITOR="vim"
 export KEYTIMEOUT=1
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_THEME="robbyrussell"
+export ZSH_TMUX_AUTOSTART=true
 
-export plugins=(zsh-autosuggestions vi-mode)
+export plugins=(zsh-autosuggestions vi-mode tmux)
 
 source $ZSH/oh-my-zsh.sh
 setopt extended_glob
