@@ -6,11 +6,17 @@ syntax on
 set wrap
 set encoding=utf8
 
+if has('mac')
+    let python_interpreter = '/usr/local/bin/python3'
+else
+    let python_interpreter = 'python3'
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Utility
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': '/usr/local/bin/python3 install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
 Plug 'fs111/pydoc.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim' | Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -92,7 +98,7 @@ let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 0
 
 " YouCompleteMe
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_path_to_python_interpreter = python_interpreter
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
