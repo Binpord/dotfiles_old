@@ -80,7 +80,7 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-" Theme and Styling 
+" Theme and Styling
 set t_Co=256
 set background=dark
 if (has("termguicolors"))
@@ -156,7 +156,7 @@ function! YcmOnDeleteChar()
     if pumvisible()
         return "\<C-y>"
     endif
-    return "" 
+    return ""
 endfunction
 
 imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
@@ -187,7 +187,8 @@ nnoremap <c-h> <c-w><c-h>
 nnoremap <c-c> <c-w><c-c>
 
 " Misc
-inoremap jj <ESC>		
+inoremap jj <ESC>
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 
 """""""""""""""""""""""""""""
