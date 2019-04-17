@@ -159,16 +159,16 @@ function! YcmOnDeleteChar()
     return ""
 endfunction
 
-imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+inoremap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 
 " incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+noremap /  <Plug>(incsearch-forward)
+noremap ?  <Plug>(incsearch-backward)
+noremap g/ <Plug>(incsearch-stay)
 
-map z/ <Plug>(incsearch-fuzzyspell-/)
-map z? <Plug>(incsearch-fuzzyspell-?)
-map zg/ <Plug>(incsearch-fuzzyspell-stay)
+noremap z/ <Plug>(incsearch-fuzzyspell-/)
+noremap z? <Plug>(incsearch-fuzzyspell-?)
+noremap zg/ <Plug>(incsearch-fuzzyspell-stay)
 
 " fzf
 nnoremap <c-p> :Files<CR>
