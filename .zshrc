@@ -28,6 +28,7 @@ alias l="ls"
 alias vim="nvim"
 alias ..="cd .."
 alias gst='git status'
+alias gadd='git add'
 alias gci='git commit'
 alias gco='git checkout'
 alias gpush='git push'
