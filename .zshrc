@@ -36,5 +36,5 @@ alias gpush='git push'
 alias gpull='git pull'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.conda-init.zsh ] && source ~/.conda-init.zsh
+[ -f ~/.custom.zsh ] && source ~/.custom.zsh
 
