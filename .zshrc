@@ -13,7 +13,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true
 
-export plugins=(zsh-autosuggestions vi-mode tmux)
+export plugins=(zsh-autosuggestions vi-mode tmux git)
 
 source $ZSH/oh-my-zsh.sh
 setopt extended_glob
@@ -28,12 +28,6 @@ fi
 alias l="ls"
 alias vim="nvim"
 alias ..="cd .."
-alias gst='git status'
-alias gadd='git add'
-alias gci='git commit'
-alias gco='git checkout'
-alias gpush='git push'
-alias gpull='git pull'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.custom.zsh ] && source ~/.custom.zsh
