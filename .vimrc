@@ -1,4 +1,4 @@
-" n<Plug>delimitMateBSbin<Plug>delimitMateBS<Plug>delimitMateBS<Plug>delimitMateBSbinpre<Plug>delimitMateBSo""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
 " Vadim Shiyanov Vimrc config
 """""""""""""""""""""""""""""
 set nocompatible
@@ -19,7 +19,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
 Plug 'fs111/pydoc.vim'
 Plug 'godlygeek/tabular'
-Plug 'haya14busa/incsearch.vim' | Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'raimondi/delimitmate'
@@ -160,15 +159,6 @@ function! YcmOnDeleteChar()
 endfunction
 
 imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
-
-" incsearch
-noremap /  <Plug>(incsearch-forward)
-noremap ?  <Plug>(incsearch-backward)
-noremap g/ <Plug>(incsearch-stay)
-
-noremap z/ <Plug>(incsearch-fuzzyspell-/)
-noremap z? <Plug>(incsearch-fuzzyspell-?)
-noremap zg/ <Plug>(incsearch-fuzzyspell-stay)
 
 " fzf
 nnoremap <c-p> :Files<CR>
