@@ -88,6 +88,8 @@ endif
 colorscheme gruvbox
 
 " NERDTree
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
+let NERDTreeRespectWildIgnore=1
 let NERDTreeShowHidden=1
 
 " airline
