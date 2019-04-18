@@ -28,6 +28,7 @@ fi
 alias l="ls"
 alias vim="nvim"
 alias ..="cd .."
+alias ssh="TERM=xterm-256color ssh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.custom.zsh ] && source ~/.custom.zsh
