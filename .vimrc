@@ -1,11 +1,18 @@
 """""""""""""""""""""""""""""
 " Vadim Shiyanov Vimrc config
 """""""""""""""""""""""""""""
+
+"
+" Vim-plug
+"
 set nocompatible
 syntax on
 set wrap
 set encoding=utf8
 
+"
+" Use homebrew python3 if on MacOS
+"
 if has('mac')
     let python_interpreter = '/usr/local/bin/python3'
 else
@@ -38,9 +45,9 @@ Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
-"""""""""""""""""""""""""""""
+"
 " Settings
-"""""""""""""""""""""""""""""
+"
 
 " Lines
 set number
@@ -92,7 +99,7 @@ set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 let NERDTreeRespectWildIgnore=1
 let NERDTreeShowHidden=1
 
-" airline
+" Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox'
@@ -104,7 +111,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
-" ultisnips
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " delimitMate
@@ -116,12 +123,12 @@ let delimitMate_smart_matchpairs = 1
 " vim-gitgutter
 set updatetime=100
 
-" ack
+" Ack
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
-" syntastic
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -130,10 +137,14 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-" Misc
+" Make backspace work like in most other apps
 set backspace=2
+
+" Paste toggle
 set pastetoggle=<F2>
-let g:elite_mode=1  " Enable elite mode. No arrows!!!
+
+" Elite mode. No arrows!!!
+let g:elite_mode=1
 if get(g:, 'elite_mode')
     nnoremap <Up>    :resize +2<CR>
     nnoremap <Down>  :resize -2<CR>
@@ -141,9 +152,9 @@ if get(g:, 'elite_mode')
     nnoremap <Right> :vertical resize -2<CR>
 endif
 
-"""""""""""""""""""""""""""""
+"
 " Mapping
-"""""""""""""""""""""""""""""
+"
 
 " NERDTree
 nnoremap <c-q> :NERDTreeToggle<CR>
@@ -178,27 +189,19 @@ nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-c> <c-w><c-c>
 
-" Misc
+" No more anoying esc finding
 inoremap jj <ESC>
+
+" Remove trailing space on F5
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 
-"""""""""""""""""""""""""""""
+"
 " Commands
-"""""""""""""""""""""""""""""
+"
 
 " Saving files with root priveledges without opening vim as root.
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-if has('nvim')
-    function! BottomTerminal(cmd)
-        :execute 'belowright 15split | terminal cd %:p:h && '. a:cmd
-    endfunction
-
-    command! Term call BottomTerminal('$SHELL')
-endif
-
+" Command for sourcing vimrc
 command! ReloadVim source ~/.vimrc
-
-command! CTags call jobstart('ctags -R .')
-
