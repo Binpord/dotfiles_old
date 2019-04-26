@@ -1,0 +1,82 @@
+{
+    "vim": [
+        {
+            "type": "link",
+            "task": {
+                "src": ".vimrc",
+                "dst": "$HOME/.vimrc"
+            }
+        },
+        {
+            "type": "link",
+            "task": {
+                "src": ".vim/ycm_extra_conf.py",
+                "dst": "$HOME/.vim/ycm_extra_conf.py"
+            }
+        },
+        {
+            "type": "link",
+            "task": {
+                "src": ".config/nvim/init.vim",
+                "dst": "$HOME/.config/nvim/init.vim"
+            }
+        },
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+            }
+        },
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "vim +PlugInstall +qall"
+            }
+        }
+    ],
+    "zsh": [
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+            }
+        },
+        {
+            "type": "link",
+            "task": {
+                "src": ".zshrc",
+                "dst": "$HOME/.zshrc"
+            }
+        },
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+            }
+        }
+    ],
+    "tmux": [
+        {
+            "type": "link",
+            "task": {
+                "src": ".tmux.conf",
+                "dst": "$HOME/.tmux.conf"
+            }
+        },
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins"
+            }
+        }
+    ],
+    "ssh": [
+        {
+            "type": "link",
+            "task": {
+                "src": ".ssh/config",
+                "dst": "$HOME/.ssh/config"
+            }
+        }
+    ]
+}
