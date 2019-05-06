@@ -23,8 +23,7 @@ call plug#begin('~/.vim/plugged')
 
 " Utility
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
-Plug 'fs111/pydoc.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer --gocode-completer' }
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -35,6 +34,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'wesQ3/vim-windowswap'
+
+" Python
+Plug 'fs111/pydoc.vim'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
+
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Looks
 Plug 'airblade/vim-gitgutter'
@@ -136,6 +142,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Python-mode
+let g:pymode_python = 'python3'
 
 " Make backspace work like in most other apps
 set backspace=2
