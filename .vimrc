@@ -200,6 +200,7 @@ nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-c> <c-w><c-c>
+nnoremap <c-x> <c-w><c-x>
 
 " No more anoying esc finding
 inoremap jj <ESC>
