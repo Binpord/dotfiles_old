@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 " Utility
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer --gocode-completer' }
+Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
@@ -185,6 +186,12 @@ function! YcmOnDeleteChar()
 endfunction
 
 imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+
+" vimux
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vz :VimuxZoomRunner<CR>
 
 " fzf
 nnoremap <c-p> :Files<CR>
