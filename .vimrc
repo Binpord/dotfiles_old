@@ -14,9 +14,9 @@ set encoding=utf8
 " Use homebrew python3 if on MacOS
 "
 if has('mac')
-    let python_interpreter = '/usr/local/bin/python3'
+    let python_interpreter='/usr/local/bin/python3'
 else
-    let python_interpreter = 'python3'
+    let python_interpreter='python3'
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 " Utility
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer --gocode-completer' }
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -107,24 +108,24 @@ let NERDTreeShowHidden=1
 
 " Airline
 set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts=1
+let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled=0
 
 " YouCompleteMe
-let g:ycm_path_to_python_interpreter = python_interpreter
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_extra_conf = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter=python_interpreter
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_extra_conf=1
+let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-]>"
 
 " delimitMate
-let delimitMate_expand_space = 1
-let delimitMate_expand_cr = 1
-let delimitMate_smart_quotes  = 1
-let delimitMate_smart_matchpairs = 1
+let delimitMate_expand_space=1
+let delimitMate_expand_cr=1
+let delimitMate_smart_quotes=1
+let delimitMate_smart_matchpairs=1
 
 " vim-gitgutter
 set updatetime=100
@@ -138,13 +139,13 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=0
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
 
 " Python-mode
-let g:pymode_python = 'python3'
+let g:pymode_python='python3'
 
 " Make backspace work like in most other apps
 set backspace=2
@@ -194,20 +195,12 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
-" Split navigation
-nnoremap <c-j> <c-w><c-j>
-nnoremap <c-k> <c-w><c-k>
-nnoremap <c-l> <c-w><c-l>
-nnoremap <c-h> <c-w><c-h>
+" vim-tmux-navigator
 nnoremap <c-c> <c-w><c-c>
 nnoremap <c-x> <c-w><c-x>
 
 " No more anoying esc finding
 inoremap jj <ESC>
-
-" Remove trailing space on F5
-nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
-
 
 "
 " Commands
@@ -215,6 +208,3 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
 
 " Saving files with root priveledges without opening vim as root.
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-" Command for sourcing vimrc
-command! ReloadVim source ~/.vimrc
