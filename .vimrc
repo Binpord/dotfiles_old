@@ -207,6 +207,12 @@ nnoremap gj j
 nnoremap <c-c> <c-w><c-c>
 nnoremap <c-x> <c-w><c-x>
 
+" noh mapping
+nnoremap <silent> <leader>h :noh<CR>
+
+" Delete opened buffer without affecting split
+nnoremap <silent> <leader>bd :bn\|bd #<CR>
+
 " No more anoying esc finding
 inoremap jj <ESC>
 
