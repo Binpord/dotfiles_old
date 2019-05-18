@@ -165,8 +165,13 @@ if get(g:, 'elite_mode')
     nnoremap <Right> :vertical resize -2<CR>
 endif
 
+" Russian keymap
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+
 " Spelling
-set spell spelllang=en_us
+set spell spelllang=en_us,ru_ru
 
 "
 " Mapping
