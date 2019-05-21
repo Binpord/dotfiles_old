@@ -8,7 +8,7 @@
         <array>
           <string>sh</string>
           <string>-c</string>
-          <string>"$HOME/bin/proxy.sh"</string>
+          <string>"ssh -T -N vps-proxy-forward"</string>
         </array>
         <key>KeepAlive</key>
         <dict>

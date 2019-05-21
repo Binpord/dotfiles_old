@@ -78,5 +78,20 @@
                 "dst": "$HOME/.ssh/config"
             }
         }
+    ],
+    "proxy": [
+        {
+            "type": "link",
+            "task": {
+                "src": "Library/LaunchAgents/local.proxy.plist",
+                "dst": "$HOME/Library/LaunchAgents/local.proxy.plist"
+            }
+        },
+        {
+            "type": "bash",
+            "task": {
+                "cmd": "launchctl load $HOME/Library/LaunchAgents/local.proxy.plist"
+            }
+        }
     ]
 }
