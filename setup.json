@@ -90,7 +90,7 @@
         {
             "type": "bash",
             "task": {
-                "cmd": "launchctl load $HOME/Library/LaunchAgents/local.proxy.plist"
+                "cmd": "launchctl load -w $HOME/Library/LaunchAgents/local.proxy.plist"
             }
         }
     ]
