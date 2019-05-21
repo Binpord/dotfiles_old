@@ -166,7 +166,7 @@ if get(g:, 'elite_mode')
 endif
 
 " Russian keymap
-set keymap=russian-jcukenwin
+set keymap=russian-jcukenmac
 set iminsert=0
 set imsearch=0
 
