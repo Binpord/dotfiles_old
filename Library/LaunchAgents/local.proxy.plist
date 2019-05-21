@@ -6,9 +6,10 @@
         <string>local.proxy</string>
         <key>ProgramArguments</key>
         <array>
-          <string>sh</string>
-          <string>-c</string>
-          <string>"ssh -T -N vps-proxy-forward"</string>
+            <string>/usr/bin/ssh</string>
+            <string>-T</string>
+            <string>-N</string>
+            <string>vps-proxy-forward</string>
         </array>
         <key>KeepAlive</key>
         <dict>
