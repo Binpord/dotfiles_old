@@ -99,7 +99,7 @@ nnoremap <space> za
 " Theme and Styling
 set t_Co=256
 set background=dark
-if (has("termguicolors"))
+if (has('termguicolors'))
     set termguicolors
 endif
 colorscheme gruvbox
@@ -122,7 +122,7 @@ let g:ycm_extra_conf=1
 let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-]>"
+let g:UltiSnipsExpandTrigger='<c-]>'
 
 " delimitMate
 let delimitMate_expand_space=1
@@ -156,14 +156,11 @@ set backspace=2
 " Paste toggle
 set pastetoggle=<F2>
 
-" Elite mode. No arrows!!!
-let g:elite_mode=1
-if get(g:, 'elite_mode')
-    nnoremap <Up>    :resize +2<CR>
-    nnoremap <Down>  :resize -2<CR>
-    nnoremap <Left>  :vertical resize +2<CR>
-    nnoremap <Right> :vertical resize -2<CR>
-endif
+" Remap arrows
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 
 " Russian keymap
 set keymap=russian-jcukenmac
@@ -187,9 +184,9 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " dirty hack to remap <BS> from youcompleteme to delimitMate
 function! YcmOnDeleteChar()
     if pumvisible()
-        return "\<C-y>"
+        return '\<C-y>'
     endif
-    return ""
+    return ''
 endfunction
 
 imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
@@ -228,3 +225,10 @@ inoremap jj <ESC>
 
 " Saving files with root priveledges without opening vim as root.
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+"
+" Custom
+"
+if filereadable(expand('~/.custom.vim'))
+    source ~/.custom.vim
+endif
