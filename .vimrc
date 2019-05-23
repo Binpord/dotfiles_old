@@ -180,17 +180,6 @@ nnoremap <c-q> :NERDTreeToggle<CR>
 " YouCompleteMe
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" delimitMate
-" dirty hack to remap <BS> from youcompleteme to delimitMate
-function! YcmOnDeleteChar()
-    if pumvisible()
-        return '\<C-y>'
-    endif
-    return ''
-endfunction
-
-imap <silent> <bs> <c-r>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
-
 " vimux
 nnoremap <Leader>vp :VimuxPromptCommand<CR>
 nnoremap <Leader>vl :VimuxRunLastCommand<CR>
