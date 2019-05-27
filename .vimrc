@@ -3,9 +3,10 @@
 """""""""""""""""""""""""""""
 
 "
-" Vim-plug
+" General settings
 "
 set nocompatible
+filetype plugin on
 syntax on
 set wrap
 set encoding=utf8
