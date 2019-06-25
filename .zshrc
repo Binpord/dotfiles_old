@@ -14,6 +14,9 @@ export KEYTIMEOUT=1
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true
+if [[ "$(uname)" == "Darwin" ]]; then
+    export ZSH_TMUX_ITERM2=true
+fi
 
 #
 # Plugins
