@@ -5,23 +5,28 @@
 #
 # Environment
 #
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export PATH=/usr/local/sbin:$HOME/bin:$PATH
-export ZSH=$HOME/.oh-my-zsh
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export PATH="$HOME/bin:$PATH"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export KEYTIMEOUT=1
-export XDG_CONFIG_HOME=$HOME/.config
+export DISABLE_AUTO_TITLE=true
+export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
     export ZSH_TMUX_ITERM2=true
 fi
 
 #
 # Plugins
 #
-export plugins=(zsh-autosuggestions vi-mode tmux git)
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    export plugins=(zsh-autosuggestions vi-mode)
+else
+    export plugins=(zsh-autosuggestions vi-mode tmux git)
+fi
 
 #
 # Oh-my-zsh
@@ -44,12 +49,10 @@ elif [[ "$(uname)" == "Linux" ]]; then
 fi
 
 alias l="ls"
-alias vim="nvim"
-alias ..="cd .."
 alias ssh="TERM=xterm-256color ssh"
 
 #
 # Sources
 #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.custom.zsh ] && source ~/.custom.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+[ -f $HOME/.custom.zsh ] && source $HOME/.custom.zsh
