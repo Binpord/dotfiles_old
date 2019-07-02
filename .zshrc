@@ -20,6 +20,17 @@ if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
 fi
 
 #
+# Tmux ssh agent forwarding fix
+# https://unix.stackexchange.com/questions/75681/why-do-i-have-to-re-set-env-vars-in-tmux-when-i-re-attach
+#
+SOCK="$HOME/.ssh/ssh-agent-socket"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    ln -sf $SSH_AUTH_SOCK $SOCK
+    export SSH_AUTH_SOCK=$SOCK
+fi
+
+#
 # Plugins
 #
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
