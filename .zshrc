@@ -7,11 +7,9 @@
 #
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-export PATH="$HOME/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export KEYTIMEOUT=1
-export DISABLE_AUTO_TITLE=true
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true
@@ -21,14 +19,12 @@ fi
 
 #
 # Tmux ssh agent forwarding fix
-# https://unix.stackexchange.com/questions/75681/why-do-i-have-to-re-set-env-vars-in-tmux-when-i-re-attach
 #
 SOCK="$HOME/.ssh/ssh-agent-socket"
-if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-then
+if [[ -a "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$SOCK" ]]; then
     ln -sf $SSH_AUTH_SOCK $SOCK
-    export SSH_AUTH_SOCK=$SOCK
 fi
+export SSH_AUTH_SOCK=$SOCK
 
 #
 # Plugins
