@@ -13,6 +13,7 @@ export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="robbyrussell"
 export ZSH_TMUX_AUTOSTART=true
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
     export ZSH_TMUX_ITERM2=true
 fi
