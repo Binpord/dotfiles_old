@@ -29,7 +29,7 @@ export SSH_AUTH_SOCK=$SOCK
 #
 # Plugins
 #
-plugins=(zsh-autosuggestions vi-mode tmux git)
+plugins=(zsh-autosuggestions vi-mode tmux git zsh-syntax-highlighting)
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
     # Remove tmux from plugins
     plugins[$plugins[(i)tmux]]=()
