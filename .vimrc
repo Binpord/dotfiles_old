@@ -162,7 +162,11 @@ nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
 " Russian keymap
-set keymap=russian-jcukenmac
+if has('mac')
+    set keymap=russian-jcukenmac
+else
+    set keymap=russian-jcukenwin
+endif
 set iminsert=0
 set imsearch=0
 
