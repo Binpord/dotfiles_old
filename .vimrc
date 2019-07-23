@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged')
 
 " Utility
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer --gocode-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
@@ -44,13 +44,10 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'fs111/pydoc.vim'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " Looks
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -98,12 +95,13 @@ set foldlevel=99
 nnoremap <space> za
 
 " Theme and Styling
-set t_Co=256
-set background=dark
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 if (has('termguicolors'))
     set termguicolors
 endif
-colorscheme gruvbox
+colorscheme onedark
 
 " NERDTree
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
@@ -113,7 +111,7 @@ let NERDTreeShowHidden=1
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='gruvbox'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=0
 
 " YouCompleteMe
