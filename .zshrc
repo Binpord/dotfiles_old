@@ -58,7 +58,6 @@ elif [[ "$(uname)" == "Linux" ]]; then
 fi
 
 alias l="ls"
-alias ssh="TERM=xterm-256color ssh"
 
 #
 # Sources
