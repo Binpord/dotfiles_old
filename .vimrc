@@ -47,7 +47,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Looks
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -101,7 +101,7 @@ endif
 if (has('termguicolors'))
     set termguicolors
 endif
-colorscheme onedark
+colorscheme gruvbox
 
 " NERDTree
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
@@ -111,7 +111,7 @@ let NERDTreeShowHidden=1
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 
 " YouCompleteMe
