@@ -13,7 +13,7 @@ export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="robbyrussell"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
-if [[ -v SSH_TTY ]]; then
+if [[ -n "$SSH_TTY" ]]; then
     export ZSH_TMUX_AUTOSTART=true
 fi
 
