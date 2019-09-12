@@ -12,10 +12,9 @@ export EDITOR="vim"
 export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="robbyrussell"
-export ZSH_TMUX_AUTOSTART=true
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
-if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
-    export ZSH_TMUX_ITERM2=true
+if [[ -v SSH_TTY ]]; then
+    export ZSH_TMUX_AUTOSTART=true
 fi
 
 #
@@ -30,12 +29,7 @@ export SSH_AUTH_SOCK=$SOCK
 #
 # Plugins
 #
-plugins=(zsh-autosuggestions vi-mode tmux git zsh-syntax-highlighting)
-if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-    # Remove tmux from plugins
-    plugins[$plugins[(i)tmux]]=()
-fi
-export plugins
+export plugins=(zsh-autosuggestions vi-mode tmux git zsh-syntax-highlighting)
 
 #
 # Oh-my-zsh
