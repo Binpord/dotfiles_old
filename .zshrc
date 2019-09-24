@@ -11,14 +11,25 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$PATH:$HOME/bin"
 export ZSH_THEME="robbyrussell"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
+if [[ -n "$SSH_TTY" ]]; then
+    export ZSH_TMUX_AUTOSTART=true
+fi
+
+#
+# Tmux ssh agent forwarding fix
+#
+SOCK="$HOME/.ssh/ssh-agent-socket"
+if [[ -a "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$SOCK" ]]; then
+    ln -sf $SSH_AUTH_SOCK $SOCK
+fi
+export SSH_AUTH_SOCK=$SOCK
 
 #
 # Plugins
 #
-export plugins=(zsh-autosuggestions vi-mode git zsh-syntax-highlighting)
+export plugins=(zsh-autosuggestions vi-mode tmux git zsh-syntax-highlighting)
 
 #
 # Oh-my-zsh
