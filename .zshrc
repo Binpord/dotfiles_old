@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
-export ZSH_THEME="spaceship"
+export ZSH_THEME=""
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 if [[ -n "$SSH_TTY" ]]; then
     export ZSH_TMUX_AUTOSTART=true
@@ -35,6 +35,12 @@ export plugins=(zsh-autosuggestions tmux git zsh-syntax-highlighting)
 # Oh-my-zsh
 #
 source $ZSH/oh-my-zsh.sh
+
+#
+# Pure prompt
+#
+autoload -U promptinit; promptinit
+prompt pure
 
 #
 # Extended glob
