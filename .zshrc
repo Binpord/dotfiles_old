@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export KEYTIMEOUT=1
 export XDG_CONFIG_HOME="$HOME/.config"
-export ZSH_THEME="robbyrussell"
+export ZSH_THEME="spaceship"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 if [[ -n "$SSH_TTY" ]]; then
     export ZSH_TMUX_AUTOSTART=true
@@ -29,7 +29,7 @@ export SSH_AUTH_SOCK=$SOCK
 #
 # Plugins
 #
-export plugins=(zsh-autosuggestions vi-mode tmux git zsh-syntax-highlighting)
+export plugins=(zsh-autosuggestions tmux git zsh-syntax-highlighting)
 
 #
 # Oh-my-zsh
