@@ -37,12 +37,6 @@ export plugins=(zsh-autosuggestions tmux git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 #
-# Pure prompt
-#
-autoload -U promptinit; promptinit
-prompt pure
-
-#
 # Extended glob
 #
 setopt extended_glob
@@ -64,3 +58,9 @@ alias l="ls"
 #
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 [ -f $HOME/.custom.zsh ] && source $HOME/.custom.zsh
+
+#
+# Pure prompt
+#
+autoload -U promptinit; promptinit
+prompt pure
