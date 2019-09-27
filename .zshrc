@@ -45,7 +45,6 @@ setopt extended_glob
 #
 if [[ "$(uname)" == "Darwin" ]]; then
     alias ls="gls -alh --color --group-directories-first"
-    alias ctags="$(brew --prefix)/bin/ctags"
 elif [[ "$(uname)" == "Linux" ]]; then
     alias ls="ls -alh --color --group-directories-first"
 fi
