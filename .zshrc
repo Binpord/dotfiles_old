@@ -14,7 +14,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="spaceship"
 export SPACESHIP_VI_MODE_SHOW=false
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
-if [[ -n "$ZSH_TTY" ]]; then
+if [[ -n "$SSH_TTY" ]]; then
     export ZSH_TMUX_AUTOSTART=true
 fi
 
