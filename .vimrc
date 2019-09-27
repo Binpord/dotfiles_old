@@ -11,9 +11,6 @@ syntax on
 set wrap
 set encoding=utf8
 
-" Hide tags in .git dir
-set tags+=.git/tags
-
 "
 " Use homebrew python3 if on MacOS
 "
@@ -152,6 +149,7 @@ let g:syntastic_check_on_wq=0
 
 " Python-mode
 let g:pymode_python='python3'
+let g:pymode_lint=0
 
 " Make backspace work like in most other apps
 set backspace=2
@@ -223,7 +221,7 @@ nnoremap <c-r> :Tags<CR>
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Rebuild tags
-command! Ctags :! ctags -R -f ./.git/tags .
+command! RebuildTags :!ctags -R .
 
 "
 " Custom

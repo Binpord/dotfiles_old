@@ -14,7 +14,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_THEME="spaceship"
 export SPACESHIP_VI_MODE_SHOW=false
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
-export ZSH_TMUX_AUTOSTART=true
+if [[ -n "$ZSH_TTY" ]]; then
+    export ZSH_TMUX_AUTOSTART=true
+fi
 
 #
 # Tmux ssh agent forwarding fix
