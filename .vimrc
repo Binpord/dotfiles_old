@@ -11,6 +11,9 @@ syntax on
 set wrap
 set encoding=utf8
 
+" Hide tags in .git dir
+set tags+=.git/tags
+
 "
 " Use homebrew python3 if on MacOS
 "
@@ -142,7 +145,7 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list=1
+let g:syntastic_always_populate_loc_list=0
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
@@ -204,13 +207,13 @@ nnoremap <c-c> <c-w><c-c>
 nnoremap <c-x> <c-w><c-x>
 
 " noh mapping
-nnoremap <silent> <leader>; :noh<CR>
-
-" Delete opened buffer without affecting split
-nnoremap <silent> <leader>bd :bn\|bd #<CR>
+nnoremap <silent> <leader>' :noh<CR>
 
 " No more anoying esc finding
 inoremap jj <ESC>
+
+" Search through tags
+nnoremap <c-r> :Tags<CR>
 
 "
 " Commands
@@ -218,6 +221,9 @@ inoremap jj <ESC>
 
 " Saving files with root priveledges without opening vim as root.
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+" Rebuild tags
+command! Ctags :! ctags -R -f ./.git/tags .
 
 "
 " Custom
