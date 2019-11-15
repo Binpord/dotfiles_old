@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 
@@ -66,11 +67,6 @@ set mouse=a
 set hidden
 set autoread
 
-" Folding
-set foldmethod=indent
-set foldlevel=99
-nnoremap <space> za
-
 " YouCompleteMe
 let g:ycm_path_to_python_interpreter=python_interpreter
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -96,9 +92,6 @@ else
 endif
 set iminsert=0
 set imsearch=0
-
-" Spelling
-set spell spelllang=en_us,ru_ru
 
 " fzf
 nnoremap <c-p> :Files<CR>
