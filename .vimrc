@@ -23,7 +23,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': python_interpreter . ' install.py --clang-completer' }
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-endwise'
@@ -101,10 +100,6 @@ nnoremap k gk
 nnoremap j gj
 nnoremap gk k
 nnoremap gj j
-
-" vim-tmux-navigator
-nnoremap <c-c> <c-w><c-c>
-nnoremap <c-x> <c-w><c-x>
 
 " No more anoying esc finding
 inoremap jj <ESC>

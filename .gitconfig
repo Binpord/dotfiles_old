@@ -13,4 +13,4 @@
 	username = Binpord
 [core]
     excludesfile = /Users/vadim/.gitignore
-    editor = nvim
+    editor = vim
